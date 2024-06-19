@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta http-equiv="content-type" value="text/html;chaset=utf-8">
+	  <style>
+		%include reports.css%
+	  </style>
+	  <title>Cloud Readiness Adapter Compatibility Report</title>
+	</head>
+	<body class="body">
+		<table>
+			<tbody>
+				<tr>
+					<td>
+						<table class="tableView" cellpadding="2" width="100%">
+							<tbody>
+								<tr>
+									<td class="title" colspan="3">Adapter assets unsupported for Cloud or Edge deployment &nbsp;</th>
+								</tr>
+								<tr>
+								  <td colspan="3">Report date: %value timestamp%
+								</tr>
+								%ifvar connectionDataList%
+								<tr>
+								  <th>Connection Name </th>
+								  <th>Package </th>
+								  <th>Connection State </th>
+								</tr>
+								%loop connectionDataList%
+								<tr>
+								  <td>%value connectionAlias%</td>
+								  <td>%value packageName%</td>
+								  <td>%value connectionState%</td>
+								</tr>
+								%endloop%
+								%else%
+								<tr>
+									<td class="subHeading" colspan="3">No unsupported adapter dependencies found. &nbsp;</td>
+								</tr>
+								%endif%
+								<tr>
+									<td class="subHeading" colspan="3" />
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+			<tbody>
+		</table>
+	</body>
+</html>
